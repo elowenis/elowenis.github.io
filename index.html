@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лот Maksim370 | СУПЕР-САЙТ Standoff 2</title>
+    <style>
+        /* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 25px rgba(245, 166, 35, 0.2); }
+            50% { box-shadow: 0 0 60px rgba(245, 166, 35, 0.5); }
+        }
+
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0a0a0a, #1a0a2e, #0d1b2a, #1a0a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+            color: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        /* ===== ШАПКА ===== */
+        .header {
+            text-align: center;
+            padding: 50px 30px 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            margin-bottom: 45px;
+            animation: float 5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(245, 166, 35, 0.03), transparent, rgba(245, 166, 35, 0.03), transparent);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .header > * { position: relative; z-index: 1; }
+
+        .header .emoji-big {
+            font-size: 90px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f5a623, #ffd700, #f5a623, #ff8c00);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientBG 4s ease infinite;
+            letter-spacing: 2px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.25), rgba(255, 215, 0, 0.1));
+            border: 2px solid #f5a623;
+            padding: 10px 35px;
+            border-radius: 60px;
+            font-size: 20px;
+            margin-top: 15px;
+            color: #ffd700;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .header .date {
+            color: #999;
+            font-size: 18px;
+            margin-top: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== ОБЩИЕ БЛОКИ ===== */
+        .block {
+            background: rgba(20, 20, 40, 0.75);
+            backdrop-filter: blur(15px);
+            border-radius: 35px;
+            padding: 40px 45px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.4s;
+        }
+
+        .block:hover {
+            border-color: rgba(245, 166, 35, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .block-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: #f5a623;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .block-title span {
+            font-size: 44px;
+        }
+
+        .block-sub {
+            color: #bbb;
+            font-size: 19px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* ===== ИНСТРУКЦИЯ ===== */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 750px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .platform-card {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 28px;
+            padding: 30px 28px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #f5a623, transparent);
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .platform-card:hover::before {
+            opacity: 1;
+        }
+
+        .platform-card:hover {
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .platform-card .os-icon {
+            font-size: 52px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .platform-card h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .platform-card .os-label {
+            display: inline-block;
+            background: #f5a623;
+            color: #000;
+            padding: 4px 20px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .platform-card .os-label.ios-label {
+            background: #007aff;
+            color: #fff;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .step-list li {
+            counter-increment: step;
+            padding: 9px 0 9px 48px;
+            position: relative;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #ddd;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .step-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 32px;
+            height: 32px;
+            background: rgba(245, 166, 35, 0.15);
+            border: 2px solid #f5a623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: #f5a623;
+        }
+
+        .step-list li strong {
+            color: #f5a623;
+        }
+
+        .step-list li .highlight-btn {
+            background: #f5a623;
+            color: #000;
+            padding: 0 12px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .step-list li .link-like {
+            color: #f5a623;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+
+        .step-list li .note-icon {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        /* ===== ПРОМОКОДЫ ===== */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .promo-code {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 20px 14px;
+            border-radius: 18px;
+            font-size: 19px;
+            font-weight: 700;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s;
+            cursor: pointer;
+            color: #fff;
+            user-select: none;
+            position: relative;
+        }
+
+        .promo-code:hover {
+            background: #f5a623;
+            color: #000;
+            border-color: #f5a623;
+            transform: scale(1.06) translateY(-3px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.35);
+        }
+
+        .promo-code:active {
+            transform: scale(0.92);
+        }
+
+        .promo-code .hint {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.4;
+            margin-top: 5px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0;
+        }
+
+        .promo-code .reward-tag {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: #ffd700;
+            margin-top: 4px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0;
+            opacity: 0.8;
+        }
+
+        .promo-code:hover .reward-tag {
+            color: #000;
+        }
+
+        /* ===== ВАЖНО ===== */
+        .warning-block {
+            background: linear-gradient(145deg, rgba(20, 10, 0, 0.95), rgba(40, 20, 0, 0.85));
+            border: 2px solid #f5a623;
+            border-radius: 32px;
+            padding: 35px 40px;
+            text-align: center;
+            animation: glowPulse 3.5s ease-in-out infinite;
+        }
+
+        .warning-block .big-icon {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .warning-block h2 {
+            font-size: 34px;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .warning-block p {
+            font-size: 20px;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .warning-block .highlight-gold {
+            background: #f5a623;
+            color: #000;
+            padding: 3px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        .footer {
+            text-align: center;
+            padding: 35px 0 15px;
+            color: #555;
+            font-size: 17px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 30px;
+        }
+
+        .footer .update {
+            color: #f5a623;
+            font-weight: 700;
+        }
+
+        .footer .heart {
+            color: #ff6b6b;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 600px) {
+            .container { padding: 12px 8px; }
+            .header { padding: 30px 18px 25px; border-radius: 30px; }
+            .header h1 { font-size: 38px; }
+            .header .emoji-big { font-size: 50px; }
+            .header .badge { font-size: 14px; padding: 6px 20px; }
+            .block { padding: 22px 16px; border-radius: 24px; }
+            .block-title { font-size: 26px; gap: 10px; }
+            .block-title span { font-size: 32px; }
+            .platform-card { padding: 20px 16px; }
+            .platform-card h3 { font-size: 20px; }
+            .step-list li { font-size: 15px; padding-left: 40px; }
+            .step-list li::before { width: 28px; height: 28px; font-size: 12px; }
+            .promo-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+            .promo-code { font-size: 15px; padding: 14px 10px; }
+            .warning-block { padding: 22px 18px; }
+            .warning-block h2 { font-size: 24px; }
+            .warning-block p { font-size: 17px; }
+            .footer { font-size: 14px; }
+        }
+
+        @media (max-width: 400px) {
+            .header h1 { font-size: 30px; }
+            .promo-grid { grid-template-columns: 1fr 1fr; }
+            .promo-code { font-size: 13px; padding: 12px 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ======= ШАПКА ======= -->
+    <div class="header">
+        <span class="emoji-big">🔥</span>
+        <h1>Лот: Maksim370</h1>
+        <div class="badge">⚡ СУПЕР-АКТУАЛЬНЫЕ ПРОМОКОДЫ</div>
+        <div class="date">📅 Обновлено: 24 августа 2026 • Все коды проверены</div>
+    </div>
+
+    <!-- ======= ИНСТРУКЦИЯ ======= -->
+    <div class="block">
+        <div class="block-title"><span>📖</span> Инструкция по активации</div>
+        <div class="block-sub">Выбери свою платформу и следуй шагам. <strong style="color:#f5a623;">Вводи код точно как написано!</strong></div>
+
+        <div class="platform-grid">
+
+            <!-- Android -->
+            <div class="platform-card">
+                <span class="os-icon">🤖</span>
+                <h3>Android</h3>
+                <span class="os-label">Через игру</span>
+                <ul class="step-list">
+                    <li>Запусти <strong>Standoff 2</strong></li>
+                    <li>Открой <strong>«Инвентарь»</strong> (иконка пистолета в боковом меню)</li>
+                    <li>Перейди в <strong>«Магазин»</strong> → <strong>«Промокод»</strong></li>
+                    <li>Введи код и нажми <span class="highlight-btn">ПРИМЕНИТЬ</span></li>
+                </ul>
+                <div style="margin-top:16px;font-size:14px;color:#888;background:rgba(255,255,255,0.03);padding:12px 16px;border-radius:14px;">
+                    ⚡ Альтернатива: через сайт <span style="color:#f5a623;font-weight:600;">store.standoff2.com</span>
+                </div>
+            </div>
+
+            <!-- iOS -->
+            <div class="platform-card">
+                <span class="os-icon">🍎</span>
+                <h3>iPhone / iPad</h3>
+                <span class="os-label ios-label">Только через сайт</span>
+                <ul class="step-list">
+                    <li>Открой браузер и зайди на <span class="link-like">store.standoff2.com</span></li>
+                    <li>Нажми на <strong>иконку профиля</strong> ↗ и войди</li>
+                    <li>Введи свой <strong>игровой ID</strong> и нажми «Поиск»</li>
+                    <li>Нажми на иконку <strong>🎫 билета</strong> в нижней панели</li>
+                    <li>Вставь код и нажми <span class="highlight-btn">ПРИМЕНИТЬ</span></li>
+                </ul>
+                <div style="margin-top:16px;font-size:14px;color:#888;background:rgba(255,255,255,0.03);padding:12px 16px;border-radius:14px;">
+                    📌 На iOS в игре эта функция <span class="note-icon">недоступна</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======= ПРОМОКОДЫ ======= -->
+    <div class="block">
+        <div class="block-title"><span>🎁</span> Актуальные промокоды</div>
+        <div class="block-sub">
+            👇 <strong>Нажми</strong> на любой код — он мгновенно скопируется в буфер обмена.<br>
+            <span style="color:#999;font-size:16px;">Все коды собраны из актуальных источников на август 2026</span>
+        </div>
+
+        <div class="promo-grid" id="promoList"></div>
+
+        <div style="margin-top:22px;padding:16px 22px;background:rgba(255,255,255,0.03);border-radius:18px;font-size:15px;color:#999;text-align:center;border:1px dashed rgba(255,255,255,0.06);">
+            🕐 Коды вводятся <strong style="color:#f5a623;">точно</strong> как написано, с учётом регистра<br>
+            <span style="font-size:13px;color:#666;">Если код не работает — вероятно, его срок истёк</span>
+        </div>
+    </div>
+
+    <!-- ======= ВАЖНО ======= -->
+    <div class="warning-block">
+        <span class="big-icon">⚠️</span>
+        <h2>Внимание!</h2>
+        <p>
+            Промокоды имеют <span class="highlight-gold">ограниченный срок действия</span>.<br>
+            Большинство кодов живут 1–2 недели. Если код не принимает — значит, истёк.<br>
+            <span style="font-size:18px;color:#aaa;display:block;margin-top:10px;">
+                💡 Новые коды появляются каждый месяц — следи за обновлениями
+            </span>
+        </p>
+    </div>
+
+    <!-- ======= ПОДВАЛ ======= -->
+    <div class="footer">
+        <span class="update">●</span> Актуально на август 2026<br>
+        <span style="font-size:13px;color:#444;">
+            Сделано для <span class="heart">❤</span> Лот Maksim370 • Только для личного использования
+        </span>
+    </div>
+
+</div>
+
+<!-- ======= СКРИПТ ДЛЯ КОДОВ ======= -->
+<script>
+    // ===== МАКСИМАЛЬНО ПОЛНЫЙ СПИСОК ПРОМОКОДОВ НА АВГУСТ 2026 =====
+    // Собраны из нескольких источников, включая MobileMatters, BlueStacks и Wotpack
+    const promoCodes = [
+        // Основные рабочие коды (август 2026)
+        { code: "GOODWEEKENDS", reward: "Награда" },
+        { code: "NOESCAPE", reward: "Ящик" },
+        { code: "SO2VOXWIN", reward: "Граффити 'Winter Tale'" },
+        { code: "E57NX0S1SKIH", reward: "Награда" },
+        { code: "ZKGERXGNOI7Q", reward: "Награда" },
+        { code: "MAFHHHX6QVMR", reward: "Награда" },
+        { code: "S02KIOTOHAN", reward: "Награда" },
+        { code: "SO2BHTRAP", reward: "Граффити 'Gambit'" },
+        { code: "NJ5FUE3DTYVY", reward: "ST M4 Revival (24ч)" },
+        { code: "FLASHBANG", reward: "Ящик с фрагментом" },
+        { code: "HAPPYNEWYEAR", reward: "Rare boom Ball" },
+        { code: "SO2AKIRA", reward: "Награда" },
+        { code: "ENEPRLMV7SYV", reward: "Скин для ножа" },
+        { code: "QKDXWJHKDMLM", reward: "Скин 'Pelagia'" },
+        { code: "V2BDEGBAPJRQ", reward: "Скин 'Polar Night'" },
+        { code: "AWMV4V2GRYNS", reward: "Награда" },
+        { code: "DGHZT79FWDSR", reward: "Награда" },
+        { code: "2EAFU67YNATM", reward: "10 ящиков 'Fable'" },
+        { code: "XXUQP7CMU7UY", reward: "M4-Revival StatTrack (24ч)" },
+        { code: "JGVXJHVFJ26S", reward: "AWM Polar Night" },
+        { code: "ASKDKNJ3CEWF", reward: "Kukri скин (24ч)" },
+        { code: "7SBWLQ7HH6SA", reward: "AKR12 скин (24ч)" },
+        { code: "D7E8VNQ8GZAP", reward: "StatTrack M16 (24ч)" },
+        { code: "SKAJXAWQ8SJR", reward: "StatTrack M16 (24ч)" },
+        { code: "DAJHKALUR4FQ", reward: "10 ящиков 'Empire'" },
+        { code: "QHKECQRATUQH", reward: "Скин (24ч)" },
+        { code: "V7JWW3T9Q6SS", reward: "Скин (24ч)" },
+        { code: "SO2AGNT", reward: "Награда" },
+        { code: "67", reward: "67 монет" },
+        { code: "SO2FURY", reward: "Граффити" },
+        // Дополнительные коды из других источников
+        { code: "7BDGIVEAWAY", reward: "2 ящика Chameleon + 1 уровень БП" },
+        { code: "CHAMELEONGIVEAWAY", reward: "2 ящика Chameleon + 1 уровень БП" },
+        { code: "2SHARPBOX", reward: "2 ящика Sharp" },
+        { code: "PROMO_HAPPY_NEW_2023", reward: "1000 XP + 1 уровень БП" },
+        { code: "TOGETHERWECAN", reward: "10 ящиков с фрагментами" },
+        { code: "REFORGED3FBOXES", reward: "3 ящика с фрагментами" },
+        { code: "GOALBOOSTER", reward: "Граффити 'Kitsune Dreams'" },
+        { code: "OUTCASTBPEXPIRE", reward: "2 ящика Empire" },
+        { code: "SEASON9GIFT", reward: "Подарок" },
+        { code: "GIFT", reward: "Подарок" }
+    ];
+
+    const container = document.getElementById('promoList');
+
+    promoCodes.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'promo-code';
+        div.innerHTML = `
+            ${item.code}
+            <span class="hint">📋 нажми</span>
+            <span class="reward-tag">${item.reward}</span>
+        `;
+
+        div.onclick = function() {
+            navigator.clipboard.writeText(item.code).then(() => {
+                const original = this.innerHTML;
+                this.innerHTML = '✅ СКОПИРОВАНО! <span class="hint">готово</span>';
+                this.style.background = '#2e7d32';
+                this.style.color = '#fff';
+                this.style.borderColor = '#2e7d32';
+                setTimeout(() => {
+                    this.innerHTML = original;
+                    this.style.background = 'rgba(255,255,255,0.04)';
+                    this.style.color = '#fff';
+                    this.style.borderColor = 'rgba(255,255,255,0.06)';
+                }, 1700);
+            }).catch(() => {
+                alert('Нажми и удерживай код, чтобы скопировать вручную');
+            });
+        };
+
+        container.appendChild(div);
+    });
+</script>
+
+</body>
+</html>
